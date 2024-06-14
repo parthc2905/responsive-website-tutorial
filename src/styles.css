@@ -1,30 +1,19 @@
 html{
-    font-size: 16px;
+    font-size: 14px;
 }
-
+    
 body{
     margin: 0;
     padding: 0; 
     font-family: "Roboto",sans-serif;
-    font-size: 1rem;
+    color: #444444;
+    font-size: 1em;
 }
-
-
-/* @media screen and (min-width: 468px) and (max-width : 600px) {
-    body{
-        background-color: lightblue;
-    }
-} */
-
-/* @media screen and (orientation: landscape)  {
-    body{
-        background-color: rgb(173, 230, 176);
-    }
-} */
 
 h1,h2,h3,h4,h5,h6{
     font-family : "Inter", sans-serif;
     font-weight: 600;
+    color: #222222;
 }
 
 h1{
@@ -63,100 +52,105 @@ a:hover{
 #navbar{
     padding: 8px;
     margin: 0;
+    display: flex;
 }
+
 
 #logo{
     height: 32px;
+    width: 32px;
+    border-radius: 100% ;
+    display: block;
 }
 
-#Banner{
-    object-fit: cover;
+#logo-with-text{
+    height: 32px;
+    width: 32px;
+    border-radius: 100% ;
+    display: none;
+}
+
+#company-name{
+    font-family: "Inter", sans-serif ;
+    height: 100%;
+    padding: 0 10px;
+    color:gray;
+    font-size: 30px;
+    display: none;
 }
 
 h1{
     text-align: center;
+    margin: 5px 0;
 }
-
-#about{
-    display: flex;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 8px;
-}
-
-#description{
-    width: 50%;
-    padding-right:8px;
-    font-size: 1.25rem;
-}
-
-#team{
-    width: 50%;
-}
-
-#team-image{
-    border-radius: 10px;
-    width: 100%;
-
-}
-
-#Banner{/* id  */
-    width: 100%;
-    
-}
-
-
-/* .location{ class */
-    /* color: gray;
-    margin-bottom: 16px;
-} */
 
 h2{
     text-align: center;
 }
 
+
+h3{
+    margin-bottom: 4px;
+}
+
+#Banner{
+    object-fit: cover;
+    width: 100%;
+    height: 150px;
+}
+
+#about{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 8px;
+}
+
+#description{
+    font-size: 1.25rem;
+}
+
+#team-image{
+    border-radius: 5px;
+    width: 100%;
+
+}
+
 #jobs{
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 0 8px;
 }
 
+#jobs-list{
+    display: block;
+}
+
 #jobs-table{
-    width: 100%;
-    border: 1px solid gray;
-    border-collapse:collapse;
+    display: none;
 }
 
-.job-header-row th{
-    border: 1px solid gray;
+.job{
+    border: 1px solid #dddddd;
+    margin-top: 8px;
+    border-radius: 5px;
     padding: 8px;
-    background-color: #87aede;
-    text-align: left;
 }
 
-.job-data-row td{
-    border: 1px solid gray;
-    padding: 8px;
-    
-}
-#jobs-table tr:nth-child(odd){
-    background-color: #dbeafe ;
-}
-#jobs-table tr:nth-child(even){
-    background-color:#eff6ff;
+.job-title{
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #222222;
 }
 
-h3{
-    margin-bottom: 4px;
-    margin-top: 0px;
-}
-
-.apply{
-    float: right;
+.job-detail{
+    margin-top: 4px;
+    color: #555555;
 }
 
 #application{
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 0 8px;
 }
@@ -165,11 +159,12 @@ h3{
     margin: 16px 0;
 }
 
-#application-form label{
+.form-group label{
     font-weight: 600;
 }
 
-#application-form input,select,textarea{
+.form-group input,select,textarea{
+    width: 90%;
     padding: 8px;
     font-size: 1.25rem;
     margin-top: 4px;
@@ -178,7 +173,6 @@ h3{
 }
 
 .form-group textarea{
-    width: 80%;
     font-family: "Roboto";
 }
 
@@ -200,7 +194,7 @@ h3{
 }
 
 #footer{
-    background-color: #f9fafb;
+    background-color: #dce8f5;
     padding: 8px;
     margin-top: 32px;
 }
@@ -208,12 +202,12 @@ h3{
 #footer-links{
     list-style: none;
     text-align: center;
-    /* display: flex; */
+    padding-left: 0;
 }
 
 #footer-links li{
-    display: inline;
     margin: 0 16px;
+    margin-bottom: 8px;
 }
 
 .copy_right{
@@ -221,8 +215,153 @@ h3{
     font-size: 0.875rem;
 }
 
-@media screen and (min-width: 768px) {
+/* For small devices */
+@media screen and (min-width: 576px) {
+
+    #logo{
+        display: none;
+        
+    }
+
+    #logo-with-text{
+        display: block;
+
+    }
+
+    #company-name{
+        display: block;
+    }
+
+    #Banner{
+        height: 200px;
+    }
+   
+
+    h1{
+        margin: 10px 0;
+    }
+    
+    #description{
+        font-size: 1.25rem;
+        margin: 8px 30px;
+    }
+    
+    #footer-links li{
+        display: inline;
+    }
+
+    
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px){
+    html{
+        font-size: 16px;
+    }
+
+
+    #Banner{
+        height: 250px;
+    }
+
+    h1{
+        margin: 20px 0;
+    }
+
+
+    #about{
+        max-width: 800px;
+        flex-direction: row;
+    }
+
+    #description{
+        width: 50%;
+        font-size: 1.25rem;
+        padding-right: 8px;
+    }
+
+    #team{
+        width: 50%;
+    }
+
+    #team-image{
+        border-radius: 10px;
+        width: 100%;
+        height: 340px;
+    }
+
+    #jobs{
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 8px;
+    }
+
+    #jobs-list{
+        display: none;
+    }
+    
+    #jobs-table{
+        display: table;
+        width: 100%;
+        border: 1px solid gray;
+        border-collapse:collapse;
+    }
+
+    
+    .job-header-row th{
+        border: 1px solid gray;
+        padding: 8px;
+        background-color: #87aede;
+        text-align: left;
+    }
+
+    .job-data-row td{
+        border: 1px solid gray;
+        padding: 8px;
+        
+    }
+
+    #jobs-table tr:nth-child(odd){
+        background-color: #dbeafe ;
+    }
+
+    #jobs-table tr:nth-child(even){
+        background-color:#eff6ff;
+    }
+
+    #application{
+        max-width: 800px;
+    }
+    
+    .form-group input,select,textarea{
+        width: auto;
+    }
+
+    .form-group textarea{
+        width: 80%;
+    }
+    
+
+}
+
+
+/* For large devices */
+/* @media screen and (min-width: 992px){
     body{
-        background-color: lightblue;
+        color: rgb(191, 197, 22);
     }
 }
+*/
+/* For larger devices */
+/* @media screen and (min-width: 1200px){
+    html{
+        font-size: 20px; 
+    }
+    body{
+        color: rgb(81, 31, 180);
+    }
+    #Banner{
+        height: 320px;
+    }
+
+}  */
